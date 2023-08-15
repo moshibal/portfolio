@@ -1,0 +1,133 @@
+@import "../mixins/mixins.scss";
+.mainMain {
+  height: fit-content;
+  width: 100%;
+  background-color: #fff;
+  margin-top: -20vh;
+  padding: 10rem 0 5rem 0;
+  text-align: center;
+  color: #fff;
+
+  @include respond(tab-land) {
+    padding: 11rem 0 5rem 0;
+  }
+}
+.headingSkills {
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  background-image: linear-gradient(to right bottom, #1a1a2e, #0f3460);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+}
+.skillMain {
+  padding-top: 12px;
+  min-height: 22rem;
+  display: flex;
+  justify-content: space-between;
+  @include respond(tab-land) {
+    font-size: large;
+    height: fit-content;
+    flex-wrap: wrap;
+    gap: 1rem;
+    > * {
+      flex-basis: 100%;
+    }
+  }
+}
+.listOfSkills > * {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.section1 {
+  width: 27%;
+  background-image: linear-gradient(to right bottom, #1a1a2e, #b7bed3);
+  border-radius: 10px;
+  transition: all 0.2s;
+  &:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  animation-name: moveInRight;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-delay: 0.5s;
+}
+.section2 {
+  width: 27%;
+  background-image: linear-gradient(to right bottom, #1a1a2e, #b7bed3);
+  transition: all 0.2s;
+  border-radius: 10px;
+  &:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  animation-name: moveInUp;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-delay: 0.5s;
+}
+.section3 {
+  // height: 40rem;
+  width: 27%;
+  background-image: linear-gradient(to right bottom, #1a1a2e, #b7bed3);
+  transition: all 0.2s;
+  border-radius: 10px;
+  &:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-delay: 0.5s;
+}
+//Animation
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    opacity: 0.8;
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    opacity: 0.8;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  80% {
+    opacity: 0.8;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

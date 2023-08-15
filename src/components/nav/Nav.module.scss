@@ -1,0 +1,31 @@
+.mainNav {
+  padding: 1rem;
+  background-image: linear-gradient(to bottom, #1a1a2e, #b7bed3);
+  // background-image: linear-gradient(to right bottom, #45459e, #071846);
+  display: flex;
+  justify-content: space-between;
+  height: 5rem;
+  font-size: 2rem;
+}
+.unorderedList {
+  width: 80%;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+.logo {
+  width: 4rem;
+  height: 3rem;
+  background-color: whitesmoke;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+a:hover {
+  text-decoration: none;
+  box-shadow: 0 10px 15px rgba(228, 35, 35, 0.5);
+  transition: all 0.2s;
+}

@@ -1,0 +1,18 @@
+//putting the breakpoint in braket wasted my 2 hour time debugging
+@mixin respond($breakpoint) {
+  @if $breakpoint== phone {
+    @media all and (max-width: 37.5rem) {
+      @content;
+    }
+  }
+  @if $breakpoint== tab-land {
+    @media all and (max-width: 56.25rem) {
+      @content;
+    }
+  }
+  @if $breakpoint== tab-port {
+    @media all and (max-width: 52.25rem) {
+      @content;
+    }
+  }
+}

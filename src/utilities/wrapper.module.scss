@@ -1,0 +1,22 @@
+@import "../components/nav/Nav.module.scss";
+@import "../components/footer//Footer.module.scss";
+.middleDiv {
+  margin-top: 2rem;
+  text-align: center;
+  min-height: 80vh;
+}
+.middleDiv h2 {
+  color: goldenrod;
+}
+.middleDiv h2 span {
+  color: aqua;
+  font-size: 1.5rem;
+}
+.copyright {
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.5rem;
+  background-image: linear-gradient(to bottom, #1a1a2e, #b7bed3);
+}

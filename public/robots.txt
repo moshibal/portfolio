@@ -1,3 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+dark-green=#1a1a2e
+medium-green=#16213e
+ligh-green=#0f3460

@@ -1,0 +1,111 @@
+@import "../mixins/mixins.scss";
+.mainHeader {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  height: 90vh;
+  width: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  background-image: linear-gradient(to right bottom, #1a1a2e, #b7bed3);
+  @include respond(tab-land) {
+    margin-bottom: 1rem;
+  }
+}
+
+.aboutMe {
+  position: relative;
+  min-width: 50%;
+  text-align: center;
+  right: 4rem;
+  @include respond(phone) {
+    right: 30px;
+  }
+}
+.paraButton {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+.imageDiv {
+  height: 100%;
+  // clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+.myImage {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: cover;
+  @include respond(tab-land) {
+    height: 90vh;
+  }
+}
+.details {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+
+  @include respond(phone) {
+    top: 10%;
+    left: 20%;
+  }
+}
+.detailsButton {
+  border: 1px solid black;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 0.6rem;
+  background-color: #28df99;
+}
+.detailsButton:hover {
+  box-shadow: 0 5px 10px rgba(248, 240, 240, 0.5);
+  transform: translateY(-3px);
+  transition: all 0.2s;
+}
+.headingLine {
+  font-size: 3.5rem;
+  animation-name: moveInRight;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-delay: 0.5s;
+  @include respond(tab-land) {
+    font-size: 2rem;
+  }
+}
+.paragraphLine {
+  font-size: 1.5rem;
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-delay: 0.5s;
+  margin-bottom: 20px;
+}
+/////////Animation
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    opacity: 0.8;
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    opacity: 0.8;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

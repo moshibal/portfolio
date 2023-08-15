@@ -1,0 +1,89 @@
+@import "../mixins/mixins.scss";
+.form {
+  height: 40rem;
+  width: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 5rem auto;
+  position: relative;
+  background-color: whitesmoke;
+}
+.formHeading {
+  text-decoration: underline;
+}
+.form::before {
+  content: "";
+  width: 31rem;
+  height: 41rem;
+  background-image: linear-gradient(to bottom, #1a1a2e, #b7bed3);
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  z-index: -1;
+}
+.formDiv {
+  width: 100%;
+}
+.controlGroup {
+  text-align: left;
+  width: 100%;
+  position: relative;
+}
+.formButton {
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  min-width: 20vw;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+button:hover {
+  transition: 1s;
+  box-shadow: 0 10px 15px rgba(228, 35, 35, 0.5);
+}
+
+input + p {
+  color: orangered;
+}
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+label {
+  font-size: 1.5rem !important;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+input {
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  @include respond(phone) {
+    width: 100%;
+  }
+}
+
+i {
+  position: absolute;
+  top: 4.5rem;
+  right: 1rem;
+}
+input:valid {
+  border: 2px solid green;
+}
+input:invalid {
+  border: 2px solid red;
+}
