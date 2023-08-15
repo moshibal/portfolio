@@ -16,7 +16,6 @@ const Form: React.FC = () => {
   const navigate = useNavigate();
   //global state
   const { error, loading, userInfo } = useAppSelector((state) => state.login);
-  console.log(userInfo);
 
   //effect
   useEffect(() => {
