@@ -56,7 +56,7 @@ export const predictData = (team: number) => {
     try {
       //fetch predict
       const { data } = await axios.get(
-        `https://darwich.onrender.com/api/epl/predict/${team}`
+        `https://darwich.onrender.com/api/soccor/predict/${team}`
       );
 
       dispatch(searchPredictSuccess(data));
