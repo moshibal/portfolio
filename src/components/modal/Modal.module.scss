@@ -5,7 +5,6 @@
   z-index: 1;
   width: 100%;
   color: #000;
-
   @include respond(tab-port) {
     background-image: linear-gradient(to right bottom, #1a1a2e, #b7bed3);
     color: #cfd1d6;
@@ -13,11 +12,15 @@
 }
 .vedioFormModal {
   position: absolute;
-  z-index: -1;
+  // z-index: -1;
   opacity: 0.8;
   height: 100%;
 }
+
 video {
+  width: 100%; /* Ensure the video fills its container */
+  max-width: 100%; /* Ensure the video doesn't exceed its container's width */
+  display: block; /* Display the video as a block element */
   @include respond(tab-port) {
     display: none;
   }
