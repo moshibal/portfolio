@@ -44,7 +44,6 @@ const Football: React.FC = () => {
             <option value="140">La Liga</option>
             <option value="78">Bungesliga</option>
             <option value="61">Ligue 1</option>
-            <option value="1">Champions League</option>
           </select>
         </div>
       </div>

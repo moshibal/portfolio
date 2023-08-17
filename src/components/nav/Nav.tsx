@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAppSelector } from "../../store/storeHooks";
 
 import Modal from "react-modal";
 import CustomModal from "../modal/Modal";
@@ -7,6 +8,10 @@ import styles from "./Nav.module.scss";
 
 const Nav = () => {
   const [showModal, setShowModel] = useState(false);
+  //authenticate
+  const { userInfo } = useAppSelector((state) => state.login);
+
+  //handlers
   const showModel = () => {
     setShowModel(true);
   };
@@ -26,12 +31,16 @@ const Nav = () => {
           </a>
         </li>
         <li>
-          <a href="#skill" className={styles.navLink}>
-            Skills
-          </a>
+          {userInfo?.isAdmin ? (
+            <Link to="/admin/football">Football</Link>
+          ) : (
+            <a href="#skill" className={styles.navLink}>
+              Skills
+            </a>
+          )}
         </li>
         <li>
-          <a href="#1" onClick={showModel} className={styles.navLink}>
+          <a href="#aboutme" onClick={showModel} className={styles.navLink}>
             About Me
           </a>
           <Modal

@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import footballPredictReducer from "./footballPredictSlice";
+import footballReducer from "./footballSlice";
 import loginReducer from "./loginSlice";
 
 //configure the store
 export const store = configureStore({
   reducer: {
     footballPredict: footballPredictReducer,
+    football: footballReducer,
     login: loginReducer,
   },
 });

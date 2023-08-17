@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { AppDispatch } from "./store";
+import { AppDispatch, RootState } from "./store";
 import axios from "axios";
 export interface team {
   // Define the properties of a single team object here
@@ -49,14 +49,21 @@ export const { searchPredict, searchPredictFailure, searchPredictSuccess } =
   footballPredictSlice.actions;
 
 export const predictData = (team: number) => {
-  console.log(team);
-  return async (dispatch: AppDispatch) => {
+  return async (dispatch: AppDispatch, getState: () => RootState) => {
     //initail fetch request
     dispatch(searchPredict());
     try {
-      //fetch predict
+      //get user info
+      const { userInfo } = getState().login;
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userInfo?.token}`,
+        },
+      };
       const { data } = await axios.get(
-        `https://darwich.onrender.com/api/soccor/predict/${team}`
+        `https://darwich.onrender.com/api/soccor/predict/${team}`,
+        config
       );
 
       dispatch(searchPredictSuccess(data));
