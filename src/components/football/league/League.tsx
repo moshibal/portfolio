@@ -14,6 +14,7 @@ const League = () => {
   const navigate = useNavigate();
   const [filterGame, setFilterGame] = useState("39");
   const [modalVisible, setModalVisible] = useState(false);
+  const [modalInputError, setModalInputError] = useState(false);
   const [awayName, setawayName] = useState("");
   const [goal, setGoal] = useState("");
   const [shotsOnTarget, setShotsOnTarget] = useState("");
@@ -51,11 +52,19 @@ const League = () => {
       shotsOnTargetHome: Number(shotsOnTarget),
     };
     // Perform actions with inputField1Value, inputField2Value, inputField3Value
-    dispatch(
-      updateFootballData(updatingTeam, Number(filterGame), updatingMatch)
-    );
-    // Close the modal
-    closeModal();
+    if (
+      awayName.length === 0 ||
+      goal.length === 0 ||
+      shotsOnTarget.length === 0
+    ) {
+      setModalInputError(true);
+    } else {
+      dispatch(
+        updateFootballData(updatingTeam, Number(filterGame), updatingMatch)
+      );
+      // Close the modal
+      closeModal();
+    }
   };
 
   return (
@@ -139,6 +148,11 @@ const League = () => {
                 <button type="button" className="close" onClick={closeModal}>
                   &times;
                 </button>
+                {modalInputError && (
+                  <Message variant="danger">
+                    "PLease Check All Inputs Fields
+                  </Message>
+                )}
               </div>
               <div className="modal-body">
                 <input
