@@ -26,23 +26,27 @@ const Nav = () => {
       </div>
       <ul className={styles.unorderedList}>
         <li>
-          <a href="#project" className={styles.navLink}>
-            Projects
-          </a>
-        </li>
-        <li>
           {userInfo?.isAdmin ? (
-            <Link to="/admin/football">Football</Link>
+            <Link to="/admin/football/predict">Prediction</Link>
           ) : (
-            <a href="#skill" className={styles.navLink}>
-              Skills
-            </a>
+            <Link to="#project" className={styles.navLink}>
+              Projects
+            </Link>
           )}
         </li>
         <li>
-          <a href="#aboutme" onClick={showModel} className={styles.navLink}>
+          {userInfo?.isAdmin ? (
+            <Link to="/admin/football">League</Link>
+          ) : (
+            <Link to="#skill" className={styles.navLink}>
+              Skills
+            </Link>
+          )}
+        </li>
+        <li>
+          <Link to="#aboutme" onClick={showModel} className={styles.navLink}>
             About Me
-          </a>
+          </Link>
           <Modal
             isOpen={showModal}
             onRequestClose={closeModel}

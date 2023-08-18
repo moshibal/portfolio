@@ -75,7 +75,7 @@ const League = () => {
           <select
             id="filter"
             required
-            className="nav-dropdown"
+            className="nav-dropdown "
             onChange={(e) => {
               setFilterGame(e.target.value);
             }}
@@ -84,7 +84,6 @@ const League = () => {
             <option value="140">La Liga</option>
             <option value="78">Bungesliga</option>
             <option value="61">Ligue 1</option>
-            <option value="1">Champions League</option>
           </select>
         </div>
       </div>
@@ -148,13 +147,13 @@ const League = () => {
                 <button type="button" className="close" onClick={closeModal}>
                   &times;
                 </button>
+              </div>
+              <div className="modal-body">
                 {modalInputError && (
                   <Message variant="danger">
                     "PLease Check All Inputs Fields
                   </Message>
                 )}
-              </div>
-              <div className="modal-body">
                 <input
                   type="text"
                   value={awayName}
