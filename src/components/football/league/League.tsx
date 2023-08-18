@@ -84,6 +84,7 @@ const League = () => {
             <option value="140">La Liga</option>
             <option value="78">Bungesliga</option>
             <option value="61">Ligue 1</option>
+            <option value="135">Series A</option>
           </select>
         </div>
       </div>
