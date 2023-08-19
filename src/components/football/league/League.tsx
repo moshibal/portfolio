@@ -38,6 +38,9 @@ const League = () => {
     setModalVisible(true);
     setUpdatingTeam(teamID);
     setUpdatingTeamName(TeamName);
+    setGoal("");
+    setShotsOnTarget("");
+    setawayName("");
   };
 
   const closeModal = () => {
@@ -113,9 +116,9 @@ const League = () => {
                     <td>{team.teamID}</td>
                     <td>
                       <ul>
-                        <li>{`Away: ${team.matches[0].awayName} - Shots: ${team.matches[0].shotsOnTargetHome}, Goals: ${team.matches[0].goalHome}`}</li>
-                        <li>{`Away: ${team.matches[1].awayName} - Shots: ${team.matches[1].shotsOnTargetHome}, Goals: ${team.matches[1].goalHome}`}</li>
-                        <li>{`Away: ${team.matches[2].awayName} - Shots: ${team.matches[2].shotsOnTargetHome}, Goals: ${team.matches[2].goalHome}`}</li>
+                        <li>{`Away: ${team.matches[0]?.awayName} - Shots: ${team.matches[0]?.shotsOnTargetHome}, Goals: ${team.matches[0]?.goalHome}`}</li>
+                        <li>{`Away: ${team.matches[1]?.awayName} - Shots: ${team.matches[1]?.shotsOnTargetHome}, Goals: ${team.matches[1]?.goalHome}`}</li>
+                        <li>{`Away: ${team.matches[2]?.awayName} - Shots: ${team.matches[2]?.shotsOnTargetHome}, Goals: ${team.matches[2]?.goalHome}`}</li>
                       </ul>
                     </td>
                     <td>

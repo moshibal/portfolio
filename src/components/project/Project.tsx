@@ -19,7 +19,7 @@ const Project = () => {
       </h3>
       <section className={styles.project} id="project">
         {projects.map((project) => (
-          <div className={styles.projectFirst}>
+          <div className={styles.projectFirst} key={project.appLink}>
             <div className={styles.firstInformation}>
               <div className={styles.projectButton}>
                 <Link to={project.appLink} target="_blank" rel="noreferrer">
