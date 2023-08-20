@@ -54,7 +54,7 @@ const League = () => {
       goalHome: Number(goal),
       shotsOnTargetHome: Number(shotsOnTarget),
     };
-    // Perform actions with inputField1Value, inputField2Value, inputField3Value
+
     if (
       awayName.length === 0 ||
       goal.length === 0 ||
