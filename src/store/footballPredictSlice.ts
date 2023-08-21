@@ -12,7 +12,8 @@ export interface team {
 
 export interface predictionState {
   loading: boolean;
-  data: team[];
+  // data: team[];
+  data: team[][];
   error: string | null;
 }
 
@@ -31,7 +32,7 @@ export const footballPredictSlice = createSlice({
       state.error = null;
       state.data = [];
     },
-    searchPredictSuccess: (state, action: PayloadAction<team[]>) => {
+    searchPredictSuccess: (state, action: PayloadAction<team[][]>) => {
       state.loading = false;
       state.error = null;
       state.data = action.payload;

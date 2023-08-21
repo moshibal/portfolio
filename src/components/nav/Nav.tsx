@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../store/storeHooks";
+import { useAppSelector, useAppDispatch } from "../../store/storeHooks";
 
 import Modal from "react-modal";
 import CustomModal from "../modal/Modal";
 import styles from "./Nav.module.scss";
+import { logout } from "../../store/loginSlice";
 
 const Nav = () => {
+  const dispatch = useAppDispatch();
   const [showModal, setShowModel] = useState(false);
   //authenticate
   const { userInfo } = useAppSelector((state) => state.login);
@@ -29,18 +31,18 @@ const Nav = () => {
           {userInfo?.isAdmin ? (
             <Link to="/admin/football/predict">Prediction</Link>
           ) : (
-            <Link to="#project" className={styles.navLink}>
+            <a href="#project" className={styles.navLink}>
               Projects
-            </Link>
+            </a>
           )}
         </li>
         <li>
           {userInfo?.isAdmin ? (
             <Link to="/admin/football">League</Link>
           ) : (
-            <Link to="#skill" className={styles.navLink}>
+            <a href="#skill" className={styles.navLink}>
               Skills
-            </Link>
+            </a>
           )}
         </li>
         <li>
@@ -56,9 +58,20 @@ const Nav = () => {
           </Modal>
         </li>
         <li>
-          <Link to="/admin" className={styles.navLink}>
-            Login
-          </Link>
+          {userInfo?.isAdmin ? (
+            <Link
+              to="/"
+              onClick={() => {
+                dispatch(logout());
+              }}
+            >
+              Sign-out
+            </Link>
+          ) : (
+            <Link to="/admin" className={styles.navLink}>
+              LogIn
+            </Link>
+          )}
         </li>
       </ul>
     </div>

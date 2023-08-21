@@ -16,6 +16,7 @@ const Football: React.FC = () => {
   const { loading, error, data } = useAppSelector(
     (state) => state.footballPredict
   );
+  console.log(data);
   //authenticate
   const { userInfo } = useAppSelector((state) => state.login);
   //effect
@@ -55,6 +56,7 @@ const Football: React.FC = () => {
           <Message variant="danger">{error}</Message>
         ) : (
           <div className="table-responsive">
+            <h3>Over 1.5 goals</h3>
             <table className="table table-striped">
               <caption>List of Prediction</caption>
               <thead>
@@ -65,8 +67,32 @@ const Football: React.FC = () => {
                   <th scope="col">Shots On Target Aggregate</th>
                 </tr>
               </thead>
+
               <tbody>
-                {data.map((d) => (
+                {data[0]?.map((d) => (
+                  <tr key={d.game} className="fs-4">
+                    <td>{d.game}</td>
+                    <td>{d.goalAggregate}</td>
+                    <td>{d.sameTeamAggregate}</td>
+                    <td>{d.shotsOnTargetAggregate}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <h3>Under 3.5 goals</h3>
+            <table className="table table-striped">
+              <caption>List of Prediction</caption>
+              <thead>
+                <tr className="fs-4">
+                  <th scope="col">Game</th>
+                  <th scope="col">Goal Aggregate</th>
+                  <th scope="col">Same Team Aggregate</th>
+                  <th scope="col">Shots On Target Aggregate</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {data[1]?.map((d) => (
                   <tr key={d.game} className="fs-4">
                     <td>{d.game}</td>
                     <td>{d.goalAggregate}</td>
