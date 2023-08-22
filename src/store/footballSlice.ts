@@ -72,16 +72,28 @@ export const footballSlice = createSlice({
 export const { searchLeague, searchLeagueSuccess, searchLeagueFailure } =
   footballSlice.actions;
 
-export const fetchFootballData = (leagueID: number) => {
+export const fetchFootballData = (
+  leagueID: number,
+  getState: () => RootState
+) => {
   return async (dispatch: AppDispatch) => {
     //initail fetch request
     dispatch(searchLeague());
     try {
+      //get user info as it is protected
+      const { userInfo } = getState().login;
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userInfo?.token}`,
+        },
+      };
       //fetch predict
       const {
         data: { data },
       } = await axios.get(
-        `https://darwich.onrender.com/api/soccor?leagueID=${leagueID}`
+        `https://darwich.onrender.com/api/soccor?leagueID=${leagueID}`,
+        config
       );
 
       dispatch(searchLeagueSuccess(data));
