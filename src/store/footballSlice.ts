@@ -128,7 +128,8 @@ export const updateFootballData = (
         updatingMatchObject,
         config
       );
-      if (message === "success") dispatch(fetchFootballData(leagueID));
+      if (message === "success")
+        dispatch(fetchFootballData(leagueID, getState));
     } catch (error: any) {
       if (error && error.response) {
         dispatch(searchLeagueFailure(error.response.data.message));
