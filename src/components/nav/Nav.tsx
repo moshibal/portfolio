@@ -21,6 +21,9 @@ const Nav = () => {
     setShowModel(false);
   };
 
+  const signout = () => {
+    dispatch(logout());
+  };
   return (
     <div className={styles.mainNav}>
       <div>
@@ -59,12 +62,7 @@ const Nav = () => {
         </li>
         <li>
           {userInfo?.isAdmin ? (
-            <Link
-              to="/"
-              onClick={() => {
-                dispatch(logout());
-              }}
-            >
+            <Link to="/" onClick={signout}>
               Sign-out
             </Link>
           ) : (
