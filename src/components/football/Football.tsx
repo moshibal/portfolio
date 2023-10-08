@@ -63,7 +63,6 @@ const Football: React.FC = () => {
                 <tr className="fs-4">
                   <th scope="col">Game</th>
                   <th scope="col">Goal Aggregate</th>
-                  <th scope="col">Same Team Aggregate</th>
                   <th scope="col">Shots On Target Aggregate</th>
                 </tr>
               </thead>
@@ -73,7 +72,6 @@ const Football: React.FC = () => {
                   <tr key={d.game} className="fs-4">
                     <td>{d.game}</td>
                     <td>{d.goalAggregate}</td>
-                    <td>{d.sameTeamAggregate}</td>
                     <td>{d.shotsOnTargetAggregate}</td>
                   </tr>
                 ))}
@@ -86,7 +84,6 @@ const Football: React.FC = () => {
                 <tr className="fs-4">
                   <th scope="col">Game</th>
                   <th scope="col">Goal Aggregate</th>
-                  <th scope="col">Same Team Aggregate</th>
                   <th scope="col">Shots On Target Aggregate</th>
                 </tr>
               </thead>
@@ -96,7 +93,6 @@ const Football: React.FC = () => {
                   <tr key={d.game} className="fs-4">
                     <td>{d.game}</td>
                     <td>{d.goalAggregate}</td>
-                    <td>{d.sameTeamAggregate}</td>
                     <td>{d.shotsOnTargetAggregate}</td>
                   </tr>
                 ))}

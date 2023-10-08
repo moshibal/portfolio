@@ -7,7 +7,7 @@ export interface team {
   game: string;
   goalAggregate: number;
   shotsOnTargetAggregate: number;
-  sameTeamAggregate: number;
+  // sameTeamAggregate: number;
 }
 
 export interface predictionState {
