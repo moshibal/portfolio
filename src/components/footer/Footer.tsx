@@ -13,12 +13,22 @@ const Footer = () => {
             <a href="https://github.com/moshibal?tab=repositories">GitHub</a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/bishal-karki-240810142/">
+            <a
+              className={styles.detailsButton}
+              href="https://www.linkedin.com/in/bishal-karki-60a16630a"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Contact Me
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/bishal-karki-240810142/">
+            <a
+              className={styles.detailsButton}
+              href="https://www.linkedin.com/in/bishal-karki-60a16630a"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               LinkedIn
             </a>
           </li>

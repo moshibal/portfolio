@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styles from "./Header.module.scss";
 const Header = () => {
   return (
@@ -13,12 +12,14 @@ const Header = () => {
           <p className={styles.paraButton}>
             isJobAvailable &&{" "}
             <span>
-              <Link
+              <a
                 className={styles.detailsButton}
-                to="www.linkedin.com/in/bishal-karki-60a16630a"
+                href="https://www.linkedin.com/in/bishal-karki-60a16630a"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Contact Me
-              </Link>
+              </a>
             </span>
           </p>
         </div>
