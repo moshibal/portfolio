@@ -63,7 +63,7 @@ const Main = () => {
           <div className={styles.listOfSkills}>
             <h3>Python</h3>
             <h3>Node.js</h3>
-            <h3>MongoDB,Mongoose,SQL</h3>
+            <h3>MongoDB,Mongoose,SQL,PostgresSQL</h3>
             <h3>The Unix Command Line</h3>
           </div>
         </section>
@@ -73,7 +73,7 @@ const Main = () => {
         >
           <h2>Frameworks and Tools</h2>
           <div className={styles.listOfSkills}>
-            <h3>React.js</h3>
+            <h3>React.js, Next.js</h3>
             <h3>Express.js</h3>
             <h3>CI/CD using github actions</h3>
             <h3>Git, Github and Version Control</h3>

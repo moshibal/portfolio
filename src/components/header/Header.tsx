@@ -14,7 +14,7 @@ const Header = () => {
             <span>
               <a
                 className={styles.detailsButton}
-                href="https://www.linkedin.com/in/bishal-karki-240810142/"
+                href="www.linkedin.com/in/bishal-karki-60a16630a"
               >
                 Contact Me
               </a>
