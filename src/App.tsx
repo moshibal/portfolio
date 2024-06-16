@@ -7,13 +7,13 @@ import "./Global.scss";
 
 function App() {
   return (
-    <div>
+    <>
       <Nav />
       <Header />
       <Main />
       <Project />
       <Footer />
-    </div>
+    </>
   );
 }
 

@@ -1,5 +1,8 @@
 @import "../mixins/mixins.scss";
 .mainHeader {
+  font-family: "Gwendolyn", cursive;
+  word-spacing: 5px;
+  letter-spacing: 2px;
   color: #fff;
   display: flex;
   justify-content: space-between;

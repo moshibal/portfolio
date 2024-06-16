@@ -9,6 +9,7 @@ import Wraper from "./utilities/Wraper";
 import ErrorPage from "./utilities/ErrorPage";
 import Football from "./components/football/Football";
 import League from "./components/football/league/League";
+import SoccorHomePage from "./components/football/SoccorHomePage";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
   },
+  { path: "/soccor/home", element: <SoccorHomePage /> },
   {
     path: "/admin",
     element: <Wraper />,

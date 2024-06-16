@@ -16,7 +16,7 @@ const Football: React.FC = () => {
   const { loading, error, data } = useAppSelector(
     (state) => state.footballPredict
   );
-  console.log(data);
+
   //authenticate
   const { userInfo } = useAppSelector((state) => state.login);
   //effect

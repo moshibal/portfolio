@@ -30,10 +30,10 @@ const Modal = (props: any) => {
           musics, watching videos, cooking foods and off course doing household
           chores.
         </p>
+        <button className={styles.modalButton} onClick={props.onShowModal}>
+          close
+        </button>
       </div>
-      <button className={styles.modalButton} onClick={props.onShowModal}>
-        close
-      </button>
     </div>
   );
 };

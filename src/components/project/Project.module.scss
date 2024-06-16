@@ -1,4 +1,98 @@
+// @import "../mixins/mixins.scss";
+// .project {
+//   margin-top: -4rem;
+//   padding: 0 0 5rem 0;
+//   min-height: 30rem;
+//   height: 100%;
+//   width: 100%;
+//   background-image: linear-gradient(to right bottom, #1a1a2e, #b7bed3);
+// }
+// .projectHeading {
+//   display: block;
+//   margin-bottom: 5rem;
+//   text-align: center !important;
+// }
+// .projectFirst {
+//   padding: 2rem 0;
+//   display: flex;
+//   justify-content: space-between;
+//   margin-bottom: 3rem;
+// }
+// .projectButton {
+//   font-size: 2rem;
+//   text-transform: uppercase;
+// }
+// .projectButton:hover {
+//   display: inline-block;
+//   transform: translateY(-3px);
+//   transition: all 0.2s;
+//   border-radius: 5px;
+// }
+// .firstInformation {
+//   margin-left: 1rem;
+//   max-width: 50%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-start;
+//   color: aliceblue;
+//   font-size: 1rem;
+// }
+
+// /* css for image div */
+// .firstPictures {
+//   width: 50%;
+//   position: relative;
+// }
+
+// .image {
+//   height: 12rem;
+//   max-width: 30%;
+//   position: absolute;
+//   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+//   z-index: 1;
+//   transition: all 0.2s;
+//   outline-offset: 1rem;
+//   @include respond(tab-land) {
+//     height: 8rem;
+//     width: 40%;
+//   }
+// }
+// .image:hover {
+//   transform: scale(1.05);
+//   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+//   z-index: 1.5;
+//   outline: 0.5rem solid rgba(14, 237, 44, 0.8);
+// }
+// .image1 {
+//   left: 15rem;
+//   top: 2rem;
+//   right: 4rem;
+//   @include respond(tab-land) {
+//     left: 8rem;
+//     top: 1.5rem;
+//     transform: scale(1.3);
+//   }
+// }
+// .image2 {
+//   right: 15rem;
+//   top: 4rem;
+//   @include respond(tab-land) {
+//     left: 10rem;
+//     top: 3rem;
+//     transform: scale(1.2);
+//   }
+// }
+// .image3 {
+//   right: 22rem;
+//   top: 7rem;
+//   @include respond(tab-land) {
+//     left: 20%;
+//     top: 5rem;
+//     transform: scale(1.1);
+//   }
+// }
 @import "../mixins/mixins.scss";
+
 .project {
   margin-top: -4rem;
   padding: 0 0 5rem 0;
@@ -7,27 +101,32 @@
   width: 100%;
   background-image: linear-gradient(to right bottom, #1a1a2e, #b7bed3);
 }
+
 .projectHeading {
   display: block;
   margin-bottom: 5rem;
   text-align: center !important;
 }
+
 .projectFirst {
   padding: 2rem 0;
   display: flex;
   justify-content: space-between;
   margin-bottom: 3rem;
 }
+
 .projectButton {
   font-size: 2rem;
   text-transform: uppercase;
 }
+
 .projectButton:hover {
   display: inline-block;
   transform: translateY(-3px);
   transition: all 0.2s;
   border-radius: 5px;
 }
+
 .firstInformation {
   margin-left: 1rem;
   max-width: 50%;
@@ -49,7 +148,7 @@
   max-width: 30%;
   position: absolute;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-  z-index: 1;
+  z-index: 1; /* Ensure this is lower than the modal z-index */
   transition: all 0.2s;
   outline-offset: 1rem;
   @include respond(tab-land) {
@@ -57,12 +156,13 @@
     width: 40%;
   }
 }
+
 .image:hover {
   transform: scale(1.05);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
-  z-index: 2;
   outline: 0.5rem solid rgba(14, 237, 44, 0.8);
 }
+
 .image1 {
   left: 15rem;
   top: 2rem;
@@ -73,6 +173,7 @@
     transform: scale(1.3);
   }
 }
+
 .image2 {
   right: 15rem;
   top: 4rem;
@@ -82,6 +183,7 @@
     transform: scale(1.2);
   }
 }
+
 .image3 {
   right: 22rem;
   top: 7rem;

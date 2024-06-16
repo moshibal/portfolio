@@ -63,7 +63,8 @@ const Main = () => {
           <div className={styles.listOfSkills}>
             <h3>Python</h3>
             <h3>Node.js</h3>
-            <h3>MongoDB,Mongoose,SQL,PostgresSQL</h3>
+            <h3>MongoDB,MongooseL</h3>
+            <h3>SQL,PostgresSQ</h3>
             <h3>The Unix Command Line</h3>
           </div>
         </section>
