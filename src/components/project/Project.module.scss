@@ -94,6 +94,7 @@
 @import "../mixins/mixins.scss";
 
 .project {
+  // background-color: red;
   margin-top: -4rem;
   padding: 0 0 5rem 0;
   min-height: 30rem;
@@ -139,7 +140,7 @@
 
 /* css for image div */
 .firstPictures {
-  width: 50%;
+  width: 40%;
   position: relative;
 }
 
@@ -148,7 +149,7 @@
   max-width: 30%;
   position: absolute;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-  z-index: 1; /* Ensure this is lower than the modal z-index */
+
   transition: all 0.2s;
   outline-offset: 1rem;
   @include respond(tab-land) {
@@ -158,6 +159,7 @@
 }
 
 .image:hover {
+  z-index: 2;
   transform: scale(1.05);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
   outline: 0.5rem solid rgba(14, 237, 44, 0.8);
