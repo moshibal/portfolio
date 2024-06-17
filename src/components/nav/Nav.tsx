@@ -49,7 +49,7 @@ const Nav = () => {
               Sign-out
             </Link>
           ) : (
-            <Link to="/admin" className={styles.navLink}>
+            <Link to="/login" className={styles.navLink}>
               LogIn
             </Link>
           )}

@@ -1,54 +1,71 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-
 import styles from "./Login.module.scss";
 import style from "./SignUp.module.scss";
 import Message from "../../utilities/Message";
 import { useAppSelector, useAppDispatch } from "../../store/storeHooks";
-import { login } from "../../store/loginSlice";
+
 import Loader from "../../utilities/Loader";
 
-const Form: React.FC = () => {
+const SignUp: React.FC = () => {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [emailCheck, setEmailCheck] = useState("");
+  const [passwordCheck, setPasswordCheck] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  //global state
   const { error, loading, userInfo } = useAppSelector((state) => state.login);
 
-  //effect
   useEffect(() => {
-    if (userInfo?.isAdmin) navigate("/admin/football/predict");
+    if (userInfo) navigate("/dashboard");
   }, [userInfo, navigate]);
-  //submit handler
+
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (email === "" || password === "") {
-      setEmailCheck("Please enter your email and password.");
+    if (
+      email === "" ||
+      password === "" ||
+      confirmPassword === "" ||
+      username === ""
+    ) {
+      setEmailCheck("Please fill in all the fields.");
     } else if (!email.includes("@")) {
       setEmailCheck("Please enter a valid email address.");
+    } else if (password !== confirmPassword) {
+      setPasswordCheck("Passwords do not match.");
     } else {
-      // Do something with the email and password here, such as logging the user in.
-      dispatch(login(email, password));
+      //   dispatch(login(username, email, password));
     }
   };
-  //toggle password
+
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
 
   return (
-    <form className={styles.form} onSubmit={onSubmit}>
-      <h1 className={styles.formHeading}>Login Page for admin</h1>
+    <form className={style.signForm} onSubmit={onSubmit}>
+      <h1 className={styles.formHeading}>Sign Up</h1>
       {error && <Message variant="danger">{error}</Message>}
       <div className={styles.formDiv}>
         <div className={styles.controlGroup}>
-          <label htmlFor="email">Email Address</label>
+          <label htmlFor="username">Username</label>
           <input
             autoFocus
+            required
+            type="text"
+            id="username"
+            name="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div className={styles.controlGroup}>
+          <label htmlFor="email">Email Address</label>
+          <input
             required
             type="email"
             id="email"
@@ -73,17 +90,29 @@ const Form: React.FC = () => {
             onClick={togglePassword}
           />
         </div>
+        <div className={styles.controlGroup}>
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          <input
+            required
+            type={showPassword ? "text" : "password"}
+            id="confirmPassword"
+            name="confirmPassword"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+          {passwordCheck && <Message variant="danger">{passwordCheck}</Message>}
+        </div>
         {loading ? (
           <Loader></Loader>
         ) : (
-          <button className={styles.formButton}>Log In</button>
+          <button className={styles.formButton}>Sign Up</button>
         )}
         <p className={style.switchFormText}>
-          Don't have an account? <Link to="/signup">Sign Up</Link>
+          Already have an account? <Link to="/login">Log In</Link>
         </p>
       </div>
     </form>
   );
 };
 
-export default Form;
+export default SignUp;

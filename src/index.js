@@ -10,6 +10,7 @@ import ErrorPage from "./utilities/ErrorPage";
 import Football from "./components/football/Football";
 import League from "./components/football/league/League";
 import SoccorHomePage from "./components/football/SoccorHomePage";
+import SignUp from "./components/login/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -19,10 +20,17 @@ const router = createBrowserRouter([
   },
   { path: "/soccor/home", element: <SoccorHomePage /> },
   {
+    path: "/",
+    element: <Wraper />,
+    children: [
+      { path: "/signup", element: <SignUp /> },
+      { path: "/login", element: <Login /> },
+    ],
+  },
+  {
     path: "/admin",
     element: <Wraper />,
     children: [
-      { path: "/admin", element: <Login /> },
       { path: "/admin/football/predict", element: <Football /> },
       { path: "/admin/football", element: <League /> },
     ],
