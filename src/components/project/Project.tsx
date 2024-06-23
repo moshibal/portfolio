@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Project.module.scss";
+import style from "../main/Main.module.scss";
 
 const projects = [
   {
@@ -14,9 +15,9 @@ const projects = [
 const Project = () => {
   return (
     <>
-      <h3 className={`${styles.headingSkills} ${styles.projectHeading}`}>
+      <h2 className={`${style.headingSkills} ${styles.projectHeading}`}>
         Some of my projects
-      </h3>
+      </h2>
       <section className={styles.project} id="project">
         {projects.map((project) => (
           <div className={styles.projectFirst} key={project.appLink}>

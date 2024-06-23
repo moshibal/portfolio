@@ -42,7 +42,7 @@ const Form: React.FC = () => {
 
   return (
     <form className={styles.form} onSubmit={onSubmit}>
-      <h1 className={styles.formHeading}>Login Page for admin</h1>
+      <h1 className={styles.formHeading}>Login</h1>
       {error && <Message variant="danger">{error}</Message>}
       <div className={styles.formDiv}>
         <div className={styles.controlGroup}>
