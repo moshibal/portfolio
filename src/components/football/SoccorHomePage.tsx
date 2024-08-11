@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./SoccorHomePage.css";
+// import "./SoccorHomePage.css";
 import ContactForm from "../contact/Contact";
 
 const FootballHome = () => {
