@@ -20,11 +20,6 @@ const Nav = () => {
       </div>
       <ul className={styles.unorderedList}>
         <li>
-          <Link to="/soccor/home" className={styles.navLink}>
-            Football
-          </Link>
-        </li>
-        <li>
           {userInfo?.isAdmin ? (
             <Link to="/admin/football/predict">Prediction</Link>
           ) : (
