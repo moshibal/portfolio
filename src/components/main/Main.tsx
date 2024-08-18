@@ -59,7 +59,7 @@ const Main = () => {
           className={styles.section2}
           ref={(el) => (sectionRefs.current[1] = el!)}
         >
-          <h2>Back End languages</h2>
+          <h2>BackEnd languages</h2>
           <div className={styles.listOfSkills}>
             <h3>Python</h3>
             <h3>Node.js</h3>
