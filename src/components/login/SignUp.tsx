@@ -1,10 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import styles from "./Login.module.scss";
 import style from "./SignUp.module.scss";
 import Message from "../../utilities/Message";
-import { useAppSelector, useAppDispatch } from "../../store/storeHooks";
+import { useAppSelector } from "../../store/storeHooks";
 
 import Loader from "../../utilities/Loader";
 
@@ -16,7 +15,7 @@ const SignUp: React.FC = () => {
   const [emailCheck, setEmailCheck] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const dispatch = useAppDispatch();
+
   const navigate = useNavigate();
   const { error, loading, userInfo } = useAppSelector((state) => state.login);
 
