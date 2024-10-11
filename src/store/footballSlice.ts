@@ -94,6 +94,36 @@ export const fetchFootballData = (leagueID: number) => {
     }
   };
 };
+export const autoUpdateFootballData = (teamID: number, leagueID: number) => {
+  return async (dispatch: AppDispatch, getState: () => RootState) => {
+    try {
+      //get user info as it is protected
+      const { userInfo } = getState().login;
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userInfo?.token}`,
+        },
+      };
+
+      const {
+        data: { message },
+      } = await axios.patch(
+        `https://darwich.onrender.com/api/soccor/wholeWeekFixture/${teamID}`,
+        config
+      );
+      if (message === "success") dispatch(fetchFootballData(leagueID));
+    } catch (error: any) {
+      if (error && error.response) {
+        dispatch(searchLeagueFailure(error.response.data.message));
+      } else {
+        dispatch(
+          searchLeagueFailure(`An error updating the match with ${teamID}`)
+        );
+      }
+    }
+  };
+};
 export const updateFootballData = (
   teamID: number,
   leagueID: number,

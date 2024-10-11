@@ -7,6 +7,7 @@ import Message from "../../../utilities/Message";
 import {
   fetchFootballData,
   updateFootballData,
+  autoUpdateFootballData,
 } from "../../../store/footballSlice";
 import styles from "../Football.module.scss";
 
@@ -42,6 +43,12 @@ const League = () => {
     setGoal("");
     setShotsOnTarget("");
     setawayName("");
+  };
+  const autoUpdateHandler = (teamID: number) => {
+    setUpdatingTeam(teamID);
+    if (teamID) {
+      dispatch(autoUpdateFootballData(teamID, Number(filterGame)));
+    }
   };
 
   const closeModal = () => {
@@ -129,7 +136,17 @@ const League = () => {
                           updateHandler(team.teamID, team.name);
                         }}
                       >
-                        Update
+                        Manual Update
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        className="btn btn-primary"
+                        onClick={() => {
+                          autoUpdateHandler(team.teamID);
+                        }}
+                      >
+                        Auto Update
                       </button>
                     </td>
                   </tr>
