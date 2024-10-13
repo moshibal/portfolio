@@ -94,6 +94,7 @@ export const fetchFootballData = (leagueID: number) => {
     }
   };
 };
+//for auto update
 export const autoUpdateFootballData = (teamID: number, leagueID: number) => {
   return async (dispatch: AppDispatch, getState: () => RootState) => {
     try {
@@ -112,6 +113,7 @@ export const autoUpdateFootballData = (teamID: number, leagueID: number) => {
         `https://darwich.onrender.com/api/soccor/wholeWeekFixture/${teamID}`,
         config
       );
+
       if (message === "success") dispatch(fetchFootballData(leagueID));
     } catch (error: any) {
       if (error && error.response) {
@@ -124,6 +126,7 @@ export const autoUpdateFootballData = (teamID: number, leagueID: number) => {
     }
   };
 };
+//manual update
 export const updateFootballData = (
   teamID: number,
   leagueID: number,
@@ -139,6 +142,7 @@ export const updateFootballData = (
           Authorization: `Bearer ${userInfo?.token}`,
         },
       };
+
       const {
         data: { message },
       } = await axios.patch(
@@ -146,6 +150,7 @@ export const updateFootballData = (
         updatingMatchObject,
         config
       );
+
       if (message === "success") dispatch(fetchFootballData(leagueID));
     } catch (error: any) {
       if (error && error.response) {
