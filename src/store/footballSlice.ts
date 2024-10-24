@@ -111,6 +111,7 @@ export const autoUpdateFootballData = (teamID: number, leagueID: number) => {
         data: { message },
       } = await axios.patch(
         `https://darwich.onrender.com/api/soccor/wholeWeekFixture/${teamID}`,
+        {},
         config
       );
 

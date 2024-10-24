@@ -45,7 +45,7 @@ const League = () => {
     setawayName("");
   };
   const autoUpdateHandler = (teamID: number) => {
-    setUpdatingTeam(teamID);
+    // setUpdatingTeam(teamID);
     if (teamID) {
       dispatch(autoUpdateFootballData(teamID, Number(filterGame)));
     }
