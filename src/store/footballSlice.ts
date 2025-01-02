@@ -114,6 +114,13 @@ export const autoUpdateFootballData = (teamID: number, leagueID: number) => {
         {},
         config
       );
+      // const {
+      //   data: { message },
+      // } = await axios.patch(
+      //   `http://localhost:4000/api/soccor/wholeWeekFixture/${teamID}`,
+      //   {},
+      //   config
+      // );
 
       if (message === "success") dispatch(fetchFootballData(leagueID));
     } catch (error: any) {
